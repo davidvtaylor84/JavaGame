@@ -10,6 +10,8 @@ public class Game {
     UserInterface userInterface = new UserInterface();
     VisibilityManager visibilityManager = new VisibilityManager(userInterface);
 
+    Story story = new Story(this, userInterface, visibilityManager);
+
     public static void main(String[] args) {
         new Game();
     }
@@ -24,7 +26,7 @@ public class Game {
             String yourDecision = e.getActionCommand();
 
             switch (yourDecision){
-                case "start": break;
+                case "start": visibilityManager.showGameScreen(); story.playerDefault();break;
                 case "c1": break;
                 case "c2": break;
                 case "c3": break;

@@ -5,8 +5,8 @@ import game.UserInterface;
 public class VisibilityManager {
 
     UserInterface userInterface;
-    public VisibilityManager(UserInterface userInterface){
-        userInterface = userInterface;
+    public VisibilityManager(UserInterface ui){
+        userInterface = ui;
     }
 
     public void showTitleScreen(){
@@ -22,6 +22,21 @@ public class VisibilityManager {
         userInterface.imagePanel.setVisible(false);
         userInterface.inventoryPanel.setVisible(false);
         userInterface.playerStatsPanel.setVisible(false);
+    }
+
+    public void showGameScreen(){
+        userInterface.titleNamePanel.setVisible(false);
+        userInterface.startButtonPanel.setVisible(false);
+
+        userInterface.mainTextPanel.setVisible(true);
+        userInterface.choiceButtonPanel.setVisible(true);
+        userInterface.playerStatsPanel.setVisible(true);
+        userInterface.locationPanel.setVisible(true);
+        userInterface.mainTextPanel.setVisible(true);
+        userInterface.choiceButtonPanel.setVisible(true);
+        userInterface.imagePanel.setVisible(true);
+        userInterface.inventoryPanel.setVisible(true);
+        userInterface.playerStatsPanel.setVisible(true);
     }
 }
 
