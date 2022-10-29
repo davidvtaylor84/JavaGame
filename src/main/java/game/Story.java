@@ -14,16 +14,26 @@ public class Story {
     }
 
     public void playerDefault(){
-        player.setHealthPoints(10);
-        player.setInsight(0);
-        player.setDefence(3);
-        player.setInspiration(0);
-        player.setIntelligence(4);
-        userInterface.healthLabelStat.setText(Integer.toString(player.getHealthPoints()));
-        userInterface.insightLabelStat.setText(Integer.toString(player.getInsight()));
-        userInterface.defenceLabelStat.setText(Integer.toString(player.getDefence()));
-        userInterface.inspirationLabelStat.setText(Integer.toString(player.getInspiration()));
-        userInterface.intelligenceLabelStat.setText(Integer.toString(player.getIntelligence()));
+//        player.setHealthPoints(10);
+//        player.setInsight(0);
+//        player.setDefence(3);
+//        player.setInspiration(0);
+//        player.setIntelligence(4);
+        userInterface.healthLabelStat.setText(Integer.toString(10));
+        userInterface.insightLabelStat.setText(Integer.toString(0));
+        userInterface.defenceLabelStat.setText(Integer.toString(3));
+        userInterface.inspirationLabelStat.setText(Integer.toString(0));
+        userInterface.intelligenceLabelStat.setText(Integer.toString(4));
+    }
+
+    public void enterTheTown(){
+        userInterface.mainTextArea.setText("Point Pleasant is a quiet town. \nA quiet fortitude lurks among the people. You wait by your parked car and decide what to do.\nWhere to go next?");
+        userInterface.choice1.setText("Go into the newspaper office");
+        userInterface.choice2.setText("Go into the hotel");
+        userInterface.choice3.setText("Pet the dog");
+        userInterface.choice4.setText("Kiss your mother");
+        userInterface.choice5.setText("Leave town");
+        userInterface.locationTextArea.setText("Point Pleasant Town Centre");
     }
 
 }

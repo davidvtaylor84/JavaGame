@@ -6,15 +6,15 @@ import java.awt.*;
 public class UserInterface {
 
     JFrame window;
-    JPanel titleNamePanel, startButtonPanel, locationPanel, mainTextPanel, choiceButtonPanel, imagePanel, inventoryPanel, playerStatsPanel;
+    JPanel titleNamePanel, startButtonPanel, locationPanel, mainTextPanel, choiceButtonPanel, imagePanel, inventoryPanel, playerStatsPanel, introPanel, introButtonPanel;
     JLabel titleNameLabel, healthLabel, healthLabelStat, insightLabel, insightLabelStat, defenceLabel, defenceLabelStat,intelligenceLabel, intelligenceLabelStat, inspirationLabel, inspirationLabelStat;
-    JButton startButton, continueButton;
+    JButton startButton, continueButton, introButton;
     Container container;
-    JTextArea mainTextArea, locationTextArea;
+    JTextArea mainTextArea, locationTextArea, introTextArea;
 
     JButton choice1, choice2, choice3, choice4, choice5;
     Font font = new Font("Old Century", Font.PLAIN, 100);
-    Font font2 = new Font("Old Century", Font.PLAIN, 20);
+    Font font2 = new Font("Courier", Font.PLAIN, 20);
     Font font3 = new Font("Old Century", Font.PLAIN, 15);
 
 
@@ -61,6 +61,31 @@ public class UserInterface {
         window.add(titleNamePanel);
         window.add(startButtonPanel);
 
+//        Intro screen
+
+        introPanel = new JPanel();
+        introPanel.setBounds(300, 150, 800, 500);
+        introPanel.setBackground(new Color(0,0,0,0));
+        introTextArea = new JTextArea("You have been driving all night to get back to Point Pleasant.\n It had been a long drive and you are exhausted.\n The world seems full of vampires. A tedious future awaits.\n Well, you pull into the town centre eager to\n meet your dear friend, local newspaper editor, Mary Hyre.");
+        introTextArea.setBackground(new Color(0,0,0,0));
+        introTextArea.setForeground(Color.WHITE);
+        introTextArea.setFont(font2);
+        introPanel.add(introTextArea);
+        window.add(introPanel);
+
+        introButton = new JButton(">>>");
+        introButton.setFont(font2);
+        introButton.setBackground(new Color(0,0,0,0));
+        introButton.setForeground(Color.BLACK);
+        introButton.addActionListener(decisionHandler);
+        introButton.setActionCommand("startAfterIntro");
+
+        introButtonPanel = new JPanel();
+        introButtonPanel.setBounds(1000, 700, 200, 100);
+        introButtonPanel.setBackground(new Color(0,0,0,0));
+
+        introButtonPanel.add(introButton);
+        window.add(introButtonPanel);
 
 //        Game Screen
 
@@ -68,7 +93,7 @@ public class UserInterface {
         locationPanel.setBounds(330, 30, 750, 40);
         locationPanel.setBackground(Color.MAGENTA);
 
-        locationTextArea = new JTextArea("Town Square");
+        locationTextArea = new JTextArea();
         locationTextArea.setBounds(250, 30, 750, 40);
         locationTextArea.setBackground(Color.BLACK);
         locationTextArea.setForeground(Color.WHITE);
