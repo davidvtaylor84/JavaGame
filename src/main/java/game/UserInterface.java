@@ -7,12 +7,14 @@ public class UserInterface {
 
     JFrame window;
     JPanel titleNamePanel, startButtonPanel, locationPanel, mainTextPanel, choiceButtonPanel, imagePanel, inventoryPanel, playerStatsPanel, introPanel, introButtonPanel;
-    JLabel titleNameLabel, healthLabel, healthLabelStat, insightLabel, insightLabelStat, defenceLabel, defenceLabelStat,intelligenceLabel, intelligenceLabelStat, inspirationLabel, inspirationLabelStat;
+    JLabel titleNameLabel, healthLabel, healthLabelStat, insightLabel, insightLabelStat, defenceLabel, defenceLabelStat,intelligenceLabel, intelligenceLabelStat, inspirationLabel, inspirationLabelStat, imageLabel;
     JButton startButton, continueButton, introButton;
     Container container;
     JTextArea mainTextArea, locationTextArea, introTextArea;
 
     JButton choice1, choice2, choice3, choice4, choice5;
+
+    ImageIcon image;
     Font font = new Font("Old Century", Font.PLAIN, 100);
     Font font2 = new Font("Courier", Font.PLAIN, 20);
     Font font3 = new Font("Old Century", Font.PLAIN, 15);
@@ -117,7 +119,10 @@ public class UserInterface {
 
         imagePanel = new JPanel();
         imagePanel.setBounds(330, 80, 750, 400);
-        imagePanel.setBackground(Color.CYAN);
+        imagePanel.setBackground(Color.yellow);
+
+        imageLabel = new JLabel();
+        imagePanel.add(imageLabel);
         window.add(imagePanel);
 
         inventoryPanel = new JPanel();

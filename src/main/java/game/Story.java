@@ -1,5 +1,9 @@
 package game;
 
+import javax.swing.*;
+import java.util.Objects;
+
+
 public class Story {
 
     Game game;
@@ -39,6 +43,9 @@ public class Story {
         }
     }
     public void enterTheTown(){
+        ImageIcon townImage = new ImageIcon("town_square.jpeg");
+        userInterface.imageLabel.setIcon(townImage);
+
         userInterface.mainTextArea.setText("Point Pleasant is a quiet town. \nA quiet fortitude lurks among the people. You wait by your parked car and decide what to do.\nWhere to go next?");
         userInterface.choice1.setText("Go into the newspaper office");
         userInterface.choice2.setText("Go into the hotel");
