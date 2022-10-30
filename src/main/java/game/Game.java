@@ -12,6 +12,8 @@ public class Game {
 
     Story story = new Story(this, userInterface, visibilityManager);
 
+    String choiceButton1, choiceButton2, choiceButton3, choiceButton4, choiceButton5;
+
     public static void main(String[] args) {
         new Game();
     }
@@ -29,11 +31,11 @@ public class Game {
             switch (yourDecision){
                 case "start": visibilityManager.showIntroScreen();break;
                 case "startAfterIntro": visibilityManager.showGameScreen(); story.enterTheTown();break;
-                case "c1": break;
-                case "c2": break;
-                case "c3": break;
-                case "c4": break;
-                case "c5": break;
+                case "c1": story.selectChoice(choiceButton1);break;
+                case "c2": story.selectChoice(choiceButton2);break;
+                case "c3": story.selectChoice(choiceButton3);break;
+                case "c4": story.selectChoice(choiceButton4);break;
+                case "c5": story.selectChoice(choiceButton5);break;
             }
 
         }
